@@ -1,7 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
 import { CaseStudyFooterNav } from "@/components/project/CaseStudyFooterNav";
-import { getNextProject } from "@/lib/projects";
 import type { Project } from "@/types";
 
 // Asset paths matching your Figma layout
@@ -36,8 +35,6 @@ function Narrative({
 }
 
 export function AgriNectaCaseStudy({ project }: { project: Project }) {
-  const nextProject = getNextProject(project.slug);
-
   return (
     <article className="bg-[#1d1d1f] pb-12 pt-[100px] text-white md:pt-[120px] lg:pt-[144px]">
       <div className="mx-auto w-full max-w-[1312px] px-4 md:px-6 xl:px-0">
@@ -183,7 +180,7 @@ export function AgriNectaCaseStudy({ project }: { project: Project }) {
         </section>
 
         {/* Case Study Footer Navigation */}
-        <CaseStudyFooterNav nextProject={nextProject} />
+        <CaseStudyFooterNav />
       </div>
     </article>
   );

@@ -20,7 +20,7 @@ export function FeaturedProjects() {
         </header>
 
         {/* Cards */}
-        <div className="mt-10 flex flex-col gap-8 md:mt-14 md:gap-[120px] xl:mt-16">
+        <div className="mt-10 flex w-full flex-col items-center gap-8 md:mt-14 md:items-stretch md:gap-[120px] xl:mt-16">
           {projects.map((project, index) => (
             <ProjectCard key={project.slug} project={project} index={index} />
           ))}

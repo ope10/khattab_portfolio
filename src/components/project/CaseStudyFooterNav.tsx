@@ -7,7 +7,7 @@ interface CaseStudyFooterNavProps {
 
 export function CaseStudyFooterNav({ nextProject }: CaseStudyFooterNavProps) {
   return (
-    <footer className="mt-16 w-full md:mt-24 lg:mt-28">
+    <footer className="mt-16 hidden w-full md:mt-24 md:block lg:mt-28">
       <nav
         aria-label="Case study navigation"
         className="flex min-h-[88px] w-full max-w-[1300px] items-center justify-between rounded-full border border-white/10 bg-black px-6 sm:px-8 md:h-[116px] md:px-12 lg:px-14 shadow-2xl"
