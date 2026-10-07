@@ -1,21 +1,42 @@
 import Link from "next/link";
+import { getNextProject, getPrevProject } from "@/lib/projects";
 import type { Project } from "@/types";
 
 interface CaseStudyFooterNavProps {
+  prevProject?: Project;
   nextProject?: Project;
+  project?: Project;
 }
 
-export function CaseStudyFooterNav({ nextProject }: CaseStudyFooterNavProps) {
+export function CaseStudyFooterNav({
+  prevProject,
+  nextProject,
+  project,
+}: CaseStudyFooterNavProps) {
+  const resolvedPrevProject =
+    prevProject ?? (project ? getPrevProject(project.slug) : undefined);
+  const resolvedNextProject =
+    nextProject ?? (project ? getNextProject(project.slug) : undefined);
+
+  const prevHref = resolvedPrevProject
+    ? `/projects/${resolvedPrevProject.slug}`
+    : "/#projects";
+
   return (
     <footer className="mt-16 hidden w-full md:mt-24 md:block lg:mt-28">
       <nav
         aria-label="Case study navigation"
         className="flex min-h-[88px] w-full max-w-[1300px] items-center justify-between rounded-full border border-white/10 bg-black px-6 sm:px-8 md:h-[116px] md:px-12 lg:px-14 shadow-2xl"
       >
-        {/* Left: Back to Projects */}
+        {/* Left: Previous Project */}
         <Link
-          href="/#projects"
+          href={prevHref}
           className="group inline-flex items-center gap-2.5 text-sm font-medium text-white transition-colors hover:text-accent sm:text-base md:text-[18px]"
+          aria-label={
+            resolvedPrevProject
+              ? `Back to ${resolvedPrevProject.title}`
+              : "Back to projects"
+          }
         >
           <svg
             width="20"
@@ -37,9 +58,9 @@ export function CaseStudyFooterNav({ nextProject }: CaseStudyFooterNavProps) {
         </Link>
 
         {/* Right: Next Project */}
-        {nextProject && (
+        {resolvedNextProject && (
           <Link
-            href={`/projects/${nextProject.slug}`}
+            href={`/projects/${resolvedNextProject.slug}`}
             className="group inline-flex items-center gap-3 text-left transition-colors sm:gap-4 md:gap-6"
           >
             <div className="flex flex-col items-start leading-tight">
@@ -47,8 +68,8 @@ export function CaseStudyFooterNav({ nextProject }: CaseStudyFooterNavProps) {
                 Next Project
               </span>
               <span className="mt-1 text-xs font-medium text-white transition-colors group-hover:text-accent sm:text-sm md:text-base lg:text-[18px]">
-                {nextProject.title}
-                {nextProject.badge ? ` – ${nextProject.badge}` : ""}
+                {resolvedNextProject.title}
+                {resolvedNextProject.badge ? ` – ${resolvedNextProject.badge}` : ""}
               </span>
             </div>
 

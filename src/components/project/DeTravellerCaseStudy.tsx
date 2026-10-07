@@ -1,7 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { CaseStudyFooterNav } from "@/components/project/CaseStudyFooterNav";
-import { getNextProject } from "@/lib/projects";
+import { getNextProject, getPrevProject } from "@/lib/projects";
 import type { Project } from "@/types";
 
 // UI Design asset (single combined grid image from Figma)
@@ -29,9 +29,20 @@ function Narrative({
 
 export function DeTravellerCaseStudy({ project }: { project: Project }) {
   const nextProject = getNextProject(project.slug);
+  const prevProject = getPrevProject(project.slug);
 
   return (
-    <article className="bg-[#1d1d1f] pb-12 pt-[100px] text-white md:pt-[120px] lg:pt-[144px]">
+    <article className="relative bg-[#1d1d1f] pb-12 pt-[100px] text-white md:pt-[120px] lg:pt-[144px]">
+      {/* Background pattern for hero */}
+      <Image
+        src="/images/tools/Group 47614.svg"
+        alt=""
+        aria-hidden
+        width={1283}
+        height={1496}
+        className="pointer-events-none absolute select-none"
+        style={{ top: '-390px', left: '361px' }}
+      />
       <div className="mx-auto w-full max-w-[1312px] px-4 md:px-6 xl:px-0">
         {/* Case Study Header */}
         <header className="flex flex-col border-b border-white/10 pb-8">
@@ -196,7 +207,7 @@ export function DeTravellerCaseStudy({ project }: { project: Project }) {
         </section>
 
         {/* Case Study Footer Navigation */}
-        <CaseStudyFooterNav nextProject={nextProject} />
+        <CaseStudyFooterNav prevProject={prevProject} nextProject={nextProject} />
       </div>
     </article>
   );

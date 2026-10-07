@@ -1,6 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { CaseStudyFooterNav } from "@/components/project/CaseStudyFooterNav";
+import { getNextProject, getPrevProject } from "@/lib/projects";
 import type { Project } from "@/types";
 
 // Asset paths matching your Figma layout
@@ -9,10 +10,10 @@ const landingPageImage = "/images/projects/agrinecta/Frame 45.svg";
 
 const uiScreens = [
   "/images/projects/agrinecta/Frame 2147226318.svg",
-//   "/images/projects/cropxchange/ui-2.png",
-//   "/images/projects/cropxchange/ui-3.png",
-//   "/images/projects/cropxchange/ui-4.png",
-//   "/images/projects/cropxchange/ui-5.png",
+  //   "/images/projects/cropxchange/ui-2.png",
+  //   "/images/projects/cropxchange/ui-3.png",
+  //   "/images/projects/cropxchange/ui-4.png",
+  //   "/images/projects/cropxchange/ui-5.png",
 ];
 
 function Narrative({
@@ -35,8 +36,21 @@ function Narrative({
 }
 
 export function AgriNectaCaseStudy({ project }: { project: Project }) {
+  const nextProject = getNextProject(project.slug);
+  const prevProject = getPrevProject(project.slug);
+
   return (
-    <article className="bg-[#1d1d1f] pb-12 pt-[100px] text-white md:pt-[120px] lg:pt-[144px]">
+    <article className="relative bg-[#1d1d1f] pb-12 pt-[100px] text-white md:pt-[120px] lg:pt-[144px]">
+      {/* Background pattern for hero */}
+      <Image
+        src="/images/tools/Group 47614.svg"
+        alt=""
+        aria-hidden
+        width={1283}
+        height={1496}
+        className="pointer-events-none absolute select-none"
+        style={{ top: '-390px', left: '361px' }}
+      />
       <div className="mx-auto w-full max-w-[1312px] px-4 md:px-6 xl:px-0">
         {/* Case Study Header */}
         <header className="flex flex-col border-b border-white/10 pb-8">
@@ -132,23 +146,30 @@ export function AgriNectaCaseStudy({ project }: { project: Project }) {
         </div>
 
         {/* Landing Page Preview Section */}
-        <section className="mt-16 md:mt-20 lg:mt-28">
-          <Narrative title="Landing Page">
-            <p className="text-white/85">
-              Welcome to the AgriNecta homepage! Here, users can discover everything about our platform and kickstart their onboarding journey.
+        <section className="mt-16 md:mt-20 lg:mt-28 flex flex-col gap-10 max-w-[1300px] mx-auto">
+          {/* Flex Col layout for Title + Paragraph */}
+          <div className="flex flex-col gap-4">
+            <h2 className="text-[22px] font-medium tracking-[-0.02em] text-white md:text-[24px] lg:text-[26px]">
+              Landing Page
+            </h2>
+            <p className="max-w-[1300px] text-[14px] leading-6 text-white/85 md:text-[15px] md:leading-7 lg:text-[16px] lg:leading-8">
+              Welcome to the AgriNecta homepage! Here, users can discover
+              everything about our platform and kickstart their onboarding
+              journey.
             </p>
-          </Narrative>
-          <div className="mt-7 overflow-hidden rounded-lg">
+          </div>
+
+          {/* Image Container */}
+          <div className="overflow-hidden rounded-lg">
             <Image
               src={landingPageImage}
               alt="AgriNecta landing page view"
               width={1300}
-              height={1800}
+              height={1150}
               className="h-auto w-full"
             />
           </div>
         </section>
-
         {/* UI Screens Stacked List */}
         <section className="mt-16 md:mt-20 lg:mt-28">
           <h2 className="mb-8 text-[22px] font-medium tracking-[-0.02em] text-white md:text-[24px] lg:text-[26px]">
@@ -180,7 +201,10 @@ export function AgriNectaCaseStudy({ project }: { project: Project }) {
         </section>
 
         {/* Case Study Footer Navigation */}
-        <CaseStudyFooterNav />
+        <CaseStudyFooterNav
+          prevProject={prevProject}
+          nextProject={nextProject}
+        />
       </div>
     </article>
   );

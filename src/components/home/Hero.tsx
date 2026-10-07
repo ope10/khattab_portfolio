@@ -4,14 +4,24 @@ import { Button } from "@/components/ui/Button";
 export function Hero() {
   return (
     <section className="relative overflow-hidden pt-[148px] lg:pt-[64px]">
-      <div
+      {/* Background pattern */}
+      <Image
+        src="/images/tools/Group 47614.svg"
+        alt=""
+        aria-hidden
+        width={1283}
+        height={1496}
+        className="pointer-events-none absolute select-none"
+        style={{ top: '-390px', left: '361px' }}
+      />
+      {/* <div
         aria-hidden
         className="pointer-events-none absolute left-[26%] top-[-190px] h-[940px] w-[940px] rounded-full border border-[#19304a]"
-      />
-      <div
+      /> */}
+      {/* <div
         aria-hidden
         className="pointer-events-none absolute right-[-120px] top-[318px] h-[1020px] w-[1020px] rounded-full border border-[#19304a]"
-      />
+      /> */}
 
       <div className="relative mx-auto grid w-full max-w-[1447px] grid-cols-1 items-center px-4 pb-0 lg:min-h-[812px] lg:grid-cols-[minmax(0,746px)_600px] lg:gap-[70px] lg:px-0">
         <div className="order-2 mt-5 flex w-[361px] max-w-full flex-col gap-[21px] lg:order-1 lg:mt-0 lg:min-h-[593px] lg:w-auto lg:justify-center lg:gap-[24px] lg:pl-[124px]">
