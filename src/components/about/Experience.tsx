@@ -5,11 +5,11 @@ import type { ExperienceItemData } from '@/types/index'
 export function Experience() {
   return (
     <section className="w-full bg-[#121212] pt-6 pb-[64px] px-4 lg:pt-[70px] lg:pb-[70px] lg:px-[120px]">
-      <div className="mx-auto flex max-w-[1200px] flex-col justify-between lg:flex-row lg:items-start gap-12 lg:gap-0">
+      <div className="mx-auto flex w-full max-w-[1440px] flex-col justify-between lg:flex-row lg:items-start gap-12 lg:gap-0">
         
         {/* Left Side Header Text Block */}
-        <div className="w-full max-w-[361px] lg:max-w-[430px]  flex flex-col gap-[24px] lg:sticky lg:top-32">
-          <h2 className="text-[48px] sm:text-5xl lg:text-[48px] font-medium leading-[1.1] tracking-[-5px] text-white">
+        <div className="w-full max-w-[361px] lg:max-w-[430px] flex flex-col gap-[24px] lg:sticky lg:top-32">
+          <h2 className="text-[36px] sm:text-5xl lg:text-[36px] font-medium leading-[1.1] tracking-[-1px] text-white">
             Discover My Journey in Design
           </h2>
           <p className="text-base lg:text-[16px] leading-[28px] text-white/70">

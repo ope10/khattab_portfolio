@@ -79,14 +79,19 @@ function StatCounter({
 
 export function StatsBar() {
   return (
-    <section className="w-full h-[152px] border-y border-white/10 flex items-center justify-center">
+    <section className="w-full border-y border-white/10 flex items-center justify-center py-10 lg:h-[152px] lg:py-0">
       <Container className="max-w-[948px] px-4">
-        <dl className="grid grid-cols-2 md:grid-cols-4 gap-6 items-center">
+        <dl className="flex flex-col items-center gap-0 w-[270px] mx-auto lg:w-auto lg:flex-row lg:grid lg:grid-cols-4">
           {stats.map((stat, index) => (
             <div
               key={index}
-              className="relative flex flex-col items-center justify-center text-center w-full max-w-[270px] mx-auto h-[112px]"
+              className="relative flex flex-col items-center justify-center text-center w-full h-[108px] gap-0"
             >
+              {/* Horizontal divider above (mobile only, skip first) */}
+              {index > 0 && (
+                <div className="block lg:hidden w-[56px] h-[2px] bg-white mb-[24px]" />
+              )}
+
               {/* Stat Value Animated Counter */}
               <StatCounter target={stat.target} suffix={stat.suffix} />
 
@@ -95,9 +100,9 @@ export function StatsBar() {
                 {stat.label}
               </dd>
 
-              {/* Vertical Divider */}
+              {/* Vertical Divider (desktop only) */}
               {index < stats.length - 1 && (
-                <div className="hidden md:block absolute right-[-12px] top-1/2 -translate-y-1/2 h-10 w-[1px] bg-white/20" />
+                <div className="hidden lg:block absolute right-[-12px] top-1/2 -translate-y-1/2 h-10 w-[1px] bg-white/20" />
               )}
             </div>
           ))}

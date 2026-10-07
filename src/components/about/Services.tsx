@@ -3,11 +3,11 @@ import { services } from "@/data/services";
 export function Services() {
   return (
     <section className="w-full bg-[#121212] pt-6 pb-16 px-4 lg:pt-[70px] lg:pb-[70px] lg:px-[120px]">
-      <div className="mx-auto flex max-w-[1200px] flex-col justify-between lg:flex-row lg:items-start gap-12 lg:gap-0">
+      <div className="mx-auto flex w-full max-w-[1440px] flex-col justify-between lg:flex-row lg:items-start lg:gap-0 gap-12">
         
         {/* Left Side Header Text */}
-        <div className="w-full max-w-[430px] h-[192px] flex flex-col gap-[24px] lg:sticky lg:top-32">
-          <h2 className="text-[48px] sm:text-5xl lg:text-[56px] font-medium leading-[1.1]  tracking-[-5px] text-white">
+        <div className="w-full max-w-[361px] lg:max-w-[430px] flex flex-col gap-[24px] lg:sticky lg:top-32">
+          <h2 className="text-[36px] sm:text-5xl lg:text-[36px] font-medium leading-[1.1] tracking-[-1px] text-white">
             What I can do for you
           </h2>
           <p className="text-[16px] lg:text-[16px] leading-[28px] text-white/70 max-w-[380px]">
@@ -16,7 +16,7 @@ export function Services() {
         </div>
 
         {/* Right Side Vertical Stepper */}
-        <div className="relative w-full lg:max-w-[619px] flex flex-col gap-10 lg:gap-12">
+        <div className="relative w-full max-w-[361px] lg:max-w-[619px] flex flex-col gap-10 lg:gap-12">
           
           {/* Dashed Connecting Line */}
           <div className="absolute left-[20px] top-[20px] bottom-[20px] w-0 border-r-2 border-dashed border-white/20" />

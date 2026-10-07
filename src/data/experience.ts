@@ -42,8 +42,8 @@ export const experience: ExperienceItemData[] = [
     period: '2025 - 2026',
     company: 'Arix Wallex',
     role: 'UI/UX Designer',
-    summary:
-      'Optisource Technology is a platform providing businesses with cutting-edge digital solutions.',
+    // summary:
+    //   'Optisource Technology is a platform providing businesses with cutting-edge digital solutions.',
     highlights: [
       'Defined product structure and user flows through workflows, wireframes and interactive prototypes.',
       'Ran usability feedback sessions with stakeholders and iterated designs based on findings.',
