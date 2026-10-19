@@ -23,15 +23,15 @@ export function CaseStudyFooterNav({
     : "/#projects";
 
   return (
-    <footer className="mt-16 hidden w-full md:mt-24 md:block lg:mt-28">
+    <footer className="mt-12 w-full md:mt-24 lg:mt-28">
       <nav
         aria-label="Case study navigation"
-        className="flex min-h-[88px] w-full max-w-[1300px] items-center justify-between rounded-full border border-white/10 bg-black px-6 sm:px-8 md:h-[116px] md:px-12 lg:px-14 shadow-2xl"
+        className="flex min-h-[68px] w-full max-w-[1300px] items-center justify-between rounded-full border border-white/10 bg-black px-5 py-3 sm:px-8 sm:min-h-[88px] md:h-[116px] md:px-12 md:py-0 lg:px-14 shadow-2xl"
       >
         {/* Left: Previous Project */}
         <Link
           href={prevHref}
-          className="group inline-flex items-center gap-2.5 text-sm font-medium text-white transition-colors hover:text-accent sm:text-base md:text-[18px]"
+          className="group inline-flex items-center gap-2 text-sm font-medium text-white transition-colors hover:text-accent sm:gap-2.5 sm:text-base md:text-[18px]"
           aria-label={
             resolvedPrevProject
               ? `Back to ${resolvedPrevProject.title}`
@@ -61,13 +61,13 @@ export function CaseStudyFooterNav({
         {resolvedNextProject && (
           <Link
             href={`/projects/${resolvedNextProject.slug}`}
-            className="group inline-flex items-center gap-3 text-left transition-colors sm:gap-4 md:gap-6"
+            className="group inline-flex items-center gap-2 text-left transition-colors sm:gap-4 md:gap-6"
           >
             <div className="flex flex-col items-start leading-tight">
-              <span className="text-xs font-normal text-[#8E8E93] md:text-sm">
+              <span className="text-[10px] font-normal text-[#8E8E93] sm:text-xs md:text-sm">
                 Next Project
               </span>
-              <span className="mt-1 text-xs font-medium text-white transition-colors group-hover:text-accent sm:text-sm md:text-base lg:text-[18px]">
+              <span className="mt-0.5 text-xs font-medium text-white transition-colors group-hover:text-accent sm:text-sm md:text-base lg:text-[18px] line-clamp-1 max-w-[150px] sm:max-w-none">
                 {resolvedNextProject.title}
                 {resolvedNextProject.badge ? ` – ${resolvedNextProject.badge}` : ""}
               </span>
@@ -84,7 +84,7 @@ export function CaseStudyFooterNav({
                 strokeLinecap="round"
                 strokeLinejoin="round"
                 aria-hidden="true"
-                className="size-5 md:size-6"
+                className="size-4 sm:size-5 md:size-6"
               >
                 <path d="M4 12h16M14 6l6 6-6 6" />
               </svg>

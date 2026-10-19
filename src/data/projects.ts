@@ -361,7 +361,6 @@ export const projects: Project[] = [
       },
     ],
     prevSlug: "detraveller",
-    nextSlug: "safe-haven-mobile",
     card: {
       width: 1300,
       height: 669,
