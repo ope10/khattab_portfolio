@@ -34,19 +34,23 @@ export function SafeHavenWebCaseStudy({ project }: { project: Project }) {
   const prevProject = getPrevProject(project.slug);
 
   return (
-    <article className="relative bg-[#1d1d1f] pb-12 pt-[100px] text-white md:pt-[120px] lg:pt-[144px]">
-      {/* Background pattern for hero */}
-      <Image
-        src="/images/tools/Group 47614.svg"
-        alt=""
-        aria-hidden
-        width={1283}
-        height={1496}
-        className="pointer-events-none absolute select-none"
-        style={{ top: '-390px', left: '361px' }}
-      />
-      <div className="mx-auto w-full max-w-[1312px] px-4 md:px-6 xl:px-0">
-         <header className="flex flex-col border-b border-white/10 pb-8">
+    <article className="bg-[#1d1d1f] pb-12 pt-[100px] text-white md:pt-[120px] lg:pt-[144px]">
+      {/* Hero Section */}
+      <div className="relative overflow-hidden">
+        {/* Background pattern for hero */}
+        <div className="pointer-events-none absolute inset-0 overflow-hidden" aria-hidden="true">
+          <Image
+            src="/images/tools/Group 47614.svg"
+            alt=""
+            width={1283}
+            height={1496}
+            className="pointer-events-none absolute select-none max-w-none w-[380px] h-auto -top-10 -right-10 md:w-[1283px] md:h-[1496px] md:-top-[390px] md:left-[361px] md:right-auto"
+            priority
+          />
+        </div>
+
+        <div className="mx-auto w-full max-w-[1312px] px-4 md:px-6 xl:px-0">
+          <header className="flex flex-col border-b border-white/10 pb-8">
           <div className="flex flex-col gap-6 w-full">
             {/* Badge & Title Block */}
             <div className="flex flex-col items-start gap-3">
@@ -116,8 +120,11 @@ export function SafeHavenWebCaseStudy({ project }: { project: Project }) {
             className="h-auto w-full"
           />
         </section>
+      </div>
+    </div>
 
-       <div className="mt-14 space-y-14 md:mt-16 md:space-y-16 lg:mt-20 lg:space-y-20">
+    <div className="mx-auto w-full max-w-[1312px] px-4 md:px-6 xl:px-0">
+      <div className="mt-14 space-y-14 md:mt-16 md:space-y-16 lg:mt-20 lg:space-y-20">
   {/* Problem */}
   <Narrative title="Problem">
     <p className="whitespace-pre-line">{project.problem}</p>

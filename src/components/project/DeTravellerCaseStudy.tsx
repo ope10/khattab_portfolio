@@ -32,91 +32,98 @@ export function DeTravellerCaseStudy({ project }: { project: Project }) {
   const prevProject = getPrevProject(project.slug);
 
   return (
-    <article className="relative bg-[#1d1d1f] pb-12 pt-[100px] text-white md:pt-[120px] lg:pt-[144px]">
-      {/* Background pattern for hero */}
-      <Image
-        src="/images/tools/Group 47614.svg"
-        alt=""
-        aria-hidden
-        width={1283}
-        height={1496}
-        className="pointer-events-none absolute select-none"
-        style={{ top: '-390px', left: '361px' }}
-      />
-      <div className="mx-auto w-full max-w-[1312px] px-4 md:px-6 xl:px-0">
-        {/* Case Study Header */}
-        <header className="flex flex-col border-b border-white/10 pb-8">
-          <div className="flex flex-col gap-6 w-full">
-            {/* Badge & Title Block */}
-            <div className="flex flex-col items-start gap-3">
-              <span className="inline-flex items-center gap-1.5 rounded-full bg-white px-3 py-1 text-xs font-semibold text-black shadow-sm">
-                <span className="text-[#C1FA51] text-sm">✦</span>
-                <span>Mobile App</span>
-              </span>
-
-              <h1 className="text-3xl font-bold tracking-tight text-white md:text-4xl lg:text-[48px]">
-                DeTraveller
-              </h1>
-            </div>
-
-            {/* Subtitle / Description */}
-            <p className="text-sm md:text-base text-white/80 leading-relaxed max-w-[800px]">
-              {project.subtitle}
-            </p>
-
-            {/* Metadata Grid */}
-            <dl className="grid grid-cols-2 gap-y-6 gap-x-8 sm:grid-cols-4 max-w-[670px] pt-2">
-              <div>
-                <dt className="text-xs font-semibold uppercase tracking-wider text-white/50">
-                  Client:
-                </dt>
-                <dd className="mt-1 text-sm md:text-base font-medium text-white">
-                  {project.client}
-                </dd>
-              </div>
-
-              <div>
-                <dt className="text-xs font-semibold uppercase tracking-wider text-white/50">
-                  Industry:
-                </dt>
-                <dd className="mt-1 text-sm md:text-base font-medium text-white">
-                  {project.industry}
-                </dd>
-              </div>
-
-              <div>
-                <dt className="text-xs font-semibold uppercase tracking-wider text-white/50">
-                  Role:
-                </dt>
-                <dd className="mt-1 text-sm md:text-base font-medium text-white">
-                  {project.role}
-                </dd>
-              </div>
-
-              <div>
-                <dt className="text-xs font-semibold uppercase tracking-wider text-white/50">
-                  Year:
-                </dt>
-                <dd className="mt-1 text-sm md:text-base font-medium text-white">
-                  {project.year}
-                </dd>
-              </div>
-            </dl>
-          </div>
-        </header>
-
-        {/* Hero Section */}
-        <section className="mt-7 overflow-hidden rounded-lg">
+    <article className="bg-[#1d1d1f] pb-12 pt-[100px] text-white md:pt-[120px] lg:pt-[144px]">
+      {/* Hero Section */}
+      <div className="relative overflow-hidden">
+        {/* Background pattern for hero */}
+        <div className="pointer-events-none absolute inset-0 overflow-hidden" aria-hidden="true">
           <Image
-            src={heroImage}
-            alt="DeTraveller mobile application preview"
-            width={1300}
-            height={669}
+            src="/images/tools/Group 47614.svg"
+            alt=""
+            width={1283}
+            height={1496}
+            className="pointer-events-none absolute select-none max-w-none w-[380px] h-auto -top-10 -right-10 md:w-[1283px] md:h-[1496px] md:-top-[390px] md:left-[361px] md:right-auto"
             priority
-            className="h-auto w-full"
           />
-        </section>
+        </div>
 
+        <div className="mx-auto w-full max-w-[1312px] px-4 md:px-6 xl:px-0">
+          {/* Case Study Header */}
+          <header className="flex flex-col border-b border-white/10 pb-8">
+            <div className="flex flex-col gap-6 w-full">
+              {/* Badge & Title Block */}
+              <div className="flex flex-col items-start gap-3">
+                <span className="inline-flex items-center gap-1.5 rounded-full bg-white px-3 py-1 text-xs font-semibold text-black shadow-sm">
+                  <span className="text-[#C1FA51] text-sm">✦</span>
+                  <span>Mobile App</span>
+                </span>
+
+                <h1 className="text-3xl font-bold tracking-tight text-white md:text-4xl lg:text-[48px]">
+                  DeTraveller
+                </h1>
+              </div>
+
+              {/* Subtitle / Description */}
+              <p className="text-sm md:text-base text-white/80 leading-relaxed max-w-[800px]">
+                {project.subtitle}
+              </p>
+
+              {/* Metadata Grid */}
+              <dl className="grid grid-cols-2 gap-y-6 gap-x-8 sm:grid-cols-4 max-w-[670px] pt-2">
+                <div>
+                  <dt className="text-xs font-semibold uppercase tracking-wider text-white/50">
+                    Client:
+                  </dt>
+                  <dd className="mt-1 text-sm md:text-base font-medium text-white">
+                    {project.client}
+                  </dd>
+                </div>
+
+                <div>
+                  <dt className="text-xs font-semibold uppercase tracking-wider text-white/50">
+                    Industry:
+                  </dt>
+                  <dd className="mt-1 text-sm md:text-base font-medium text-white">
+                    {project.industry}
+                  </dd>
+                </div>
+
+                <div>
+                  <dt className="text-xs font-semibold uppercase tracking-wider text-white/50">
+                    Role:
+                  </dt>
+                  <dd className="mt-1 text-sm md:text-base font-medium text-white">
+                    {project.role}
+                  </dd>
+                </div>
+
+                <div>
+                  <dt className="text-xs font-semibold uppercase tracking-wider text-white/50">
+                    Year:
+                  </dt>
+                  <dd className="mt-1 text-sm md:text-base font-medium text-white">
+                    {project.year}
+                  </dd>
+                </div>
+              </dl>
+            </div>
+          </header>
+
+          {/* Hero Section */}
+          <section className="mt-7 overflow-hidden rounded-lg">
+            <Image
+              src={heroImage}
+              alt="DeTraveller mobile application preview"
+              width={1300}
+              height={669}
+              priority
+              className="h-auto w-full"
+            />
+          </section>
+        </div>
+      </div>
+
+      <div className="mx-auto w-full max-w-[1312px] px-4 md:px-6 xl:px-0">
         {/* Main Case Study Content Sections */}
         <div className="mt-14 space-y-14 md:mt-16 md:space-y-16 lg:mt-20 lg:space-y-20">
           {/* Problem */}

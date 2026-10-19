@@ -5,15 +5,16 @@ export function Hero() {
   return (
     <section className="relative overflow-hidden pt-[148px] lg:pt-[64px]">
       {/* Background pattern */}
-      <Image
-        src="/images/tools/Group 47614.svg"
-        alt=""
-        aria-hidden
-        width={1283}
-        height={1496}
-        className="pointer-events-none absolute select-none"
-        style={{ top: '-390px', left: '361px' }}
-      />
+      <div className="pointer-events-none absolute inset-0 overflow-hidden" aria-hidden="true">
+        <Image
+          src="/images/tools/Group 47614.svg"
+          alt=""
+          width={1283}
+          height={1496}
+          className="pointer-events-none absolute select-none max-w-none w-[380px] h-auto -top-10 -right-10 md:w-[1283px] md:h-[1496px] md:-top-[390px] md:left-[361px] md:right-auto"
+          priority
+        />
+      </div>
       {/* <div
         aria-hidden
         className="pointer-events-none absolute left-[26%] top-[-190px] h-[940px] w-[940px] rounded-full border border-[#19304a]"
